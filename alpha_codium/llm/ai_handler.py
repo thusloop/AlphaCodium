@@ -33,7 +33,9 @@ class AiHandler:
         try:
             if "gpt" in get_settings().get("config.model").lower():
                 openai.api_key = get_settings().openai.key
+                openai.api_base = "https://openkey.cloud/v1"
                 litellm.openai_key = get_settings().openai.key
+                litellm.api_base = "https://openkey.cloud/v1"
             self.azure = False
             if "deepseek" in get_settings().get("config.model"):
                 litellm.register_prompt_template(

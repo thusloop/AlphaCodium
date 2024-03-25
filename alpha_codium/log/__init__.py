@@ -22,7 +22,7 @@ def setup_logger(logger_path: str = "./example.log",
     if type(level) is not int:
         level = logging.INFO
 
-    fileHandler = logging.FileHandler(logger_path, mode='w')
+    fileHandler = logging.FileHandler(logger_path, mode='w',encoding='utf-8')
 
     if fmt == LoggingFormat.JSON:
         logger.remove(None)
